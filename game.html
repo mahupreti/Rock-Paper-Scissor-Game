@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+	<title>Game</title>
+</head>
+<body>
+	<div class="container">
+		<h1 id="heading">Rock Paper Scissor</h1>
+		<br><br><div>
+		<button id="computer" >Computer</button>
+		<p id="computerText"></p>
+			<br><br>
+			<br><br><div>
+			<br><br><div>
+			<p id="result">Whose time is it?</p>
+			<br><br><div>
+
+			<br><br><div>
+			<p id="value"></p>
+			<br><br><div>
+
+		<label for="play">Select your choice</label>
+	
+		<select id="play">
+			<option value="rock">Rock</option>
+			<option value="paper">Paper</option>
+			<option value="scissor">Scissor</option>
+        </select>
+        <br>
+        <br>
+        <button id="btn">Get the Selected Value</button>
+
+<script type="text/javascript">
+
+	const head = document.getElementById("heading")
+	const com = document.getElementById("computer")
+	const rock_ = document.getElementById("rock")
+	const paper_ = document.getElementById("paper")
+	const scissor_ = document.getElementById("scissor")
+
+	let playerOptions = ["rock", "paper", "scissor"]
+
+	const btn = document.querySelector('#btn');
+	        const sb = document.querySelector('#play')
+	        btn.onclick = (event) => {
+	            event.preventDefault();
+	 
+	            document.getElementById("value").innerText = sb.value
+
+
+	            let random = Math.floor(Math.random() *3)
+				
+				let txt = document.getElementById("computerText")
+			
+				txt.innerText = playerOptions[random]
+
+				//console.log(txt.innerElement)
+				if (sb.value == 'rock'){
+					if(playerOptions[random] == 'scissor'){
+						document.getElementById("result").innerText = "Player Won"
+					}
+					else if(playerOptions[random] == 'paper'){
+						document.getElementById("result").innerText ="Computer Won"
+					}
+					else{
+						document.getElementById("result").innerText = "Draw"
+					}
+				}
+
+				if (sb.value == 'paper'){
+					if(playerOptions[random] == 'scissor'){
+						document.getElementById("result").innerText = "Computer Won"
+					}
+					else if(playerOptions[random] == 'rock'){
+						document.getElementById("result").innerText ="Player Won"
+					}
+					else{
+						document.getElementById("result").innerText = "Draw"
+					}
+				}
+
+				if (sb.value == 'scissor'){
+					if(playerOptions[random] == 'rock'){
+						document.getElementById("result").innerText = "Computer Won"
+					}
+					else if(playerOptions[random] == 'paper'){
+						document.getElementById("result").innerText ="Player Won"
+					}
+					else{
+						document.getElementById("result").innerText = "Draw"
+					}
+				}
+
+	        }
+</script>
+</body>
+</html>
